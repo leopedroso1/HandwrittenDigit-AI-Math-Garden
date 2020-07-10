@@ -1,0 +1,73 @@
+<html lang='en'>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- Custom styling -->
+  <link rel='stylesheet' href='css/styles.css'>
+  <!-- Custom font -->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+
+  <!-- Favicon -->
+
+  <!-- Tensorflow JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+
+  <!-- OpenCV JS -->
+  <script src="vendor/opencv.js"></script>
+
+  <!-- Drawing in canvas functions -->
+  <script src="drawing.js"></script>
+
+  <!-- Machine Learning + Image processing  -->
+  <script src="processing.js"></script>
+
+  <!-- Game Logics  -->
+  <script src="gamelogic.js"></script>
+
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <h1 id='title'> Math Garden </h1>
+
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <!-- TODO: Add a drawing canvas here -->
+    <canvas id='canvas' width="150" height="150">
+
+
+    </canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Check Answer</button>
+  </div>
+
+  <!-- TODO: Set up TF model and drawing logic-->
+  <!-- TODO: Separate to an external file -->
+  <!-- TODO: Migrate to React -->
+
+  <script>
+
+    loadModel();
+    prepareCanvas();
+    nextQuestion(); // Loads 1st question
+     
+    // Adding event to the button - Clear the Canvas when answer is checked
+    document.getElementById('checkAnswer').addEventListener('click', (event) => {
+
+      checkAnswer();
+      //predictImage();
+      clearCanvas();
+      nextQuestion();
+
+    });
+
+  </script>
+
+</body>
+
+</html>
